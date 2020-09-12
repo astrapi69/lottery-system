@@ -1,16 +1,17 @@
 create sequence hibernate_sequence;
 
-create table resources
+create table drawn_numbers
 (
-    id           uuid not null,
-    checksum     varchar(255),
-    content      BYTEA,
-    content_type  varchar(64),
-    created      timestamp,
-    deleted_flag bool,
-    description  varchar(1024),
-    filename     varchar(1024),
-    filepath     varchar(4096),
-    filesize     bigint,
-    primary key (id)
+    id         uuid not null,
+    drawn_date timestamp,
+    constraint drawn_numbers_pkey
+        primary key (id)
+);
+
+create table drawn_numbers_lottery_numbers
+(
+    drawn_numbers_id uuid not null,
+    lottery_number   integer,
+    constraint fk_drawn_numbers_id
+        foreign key (drawn_numbers_id) references drawn_numbers
 );

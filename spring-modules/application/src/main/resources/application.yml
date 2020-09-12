@@ -28,11 +28,11 @@ server:
   port: 10080
 
 app:
-  name: resourcesystem
+  name: lotterysystem
   dir: ${user.home}/.${app.name}
   host: localhost
   uri-scheme: http
-  db-name: resourcesystem
+  db-name: lotterysystem
   db-host: ${app.host}
   db-port: 5432
   db-url-prefix: jdbc:postgresql://
@@ -74,11 +74,11 @@ spring:
           lob:
             non_contextual_creation: true
     hibernate:
-      ddl-auto: none
+      ddl-auto: create
       show_sql: true
       use_sql_comments: true
       generate_statistics: false
 
   flyway:
-    enabled: true
+    enabled: false
     baseline-on-migrate: true

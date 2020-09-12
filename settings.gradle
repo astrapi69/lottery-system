@@ -1,4 +1,4 @@
-rootProject.name = 'multi-module-spring-boot-template'
+rootProject.name = 'lottery-system'
 
 include 'spring-modules'
 include 'spring-modules:application'
